@@ -1,0 +1,48 @@
+Header
+{
+ SelectBuildPad
+ {
+  Dropdown
+  {
+  }
+ }
+ ProgressInfoPad
+ {
+  InnerInfo
+  {
+  }
+ }
+}
+Content
+{
+ Tab_MainBuildSettings
+ {
+  Background
+  {
+  }
+ }
+ Tab_Assets
+ {
+  Background
+  {
+  }
+ }
+ Tab_Textures
+ {
+  Background
+  {
+  }
+ }
+ Tab_Sounds
+ {
+  Background
+  {
+  }
+ }
+ Tab_Movies
+ {
+  Background
+  {
+  }
+ }
+}

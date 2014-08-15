@@ -1,0 +1,7 @@
+taxi
+{
+ wheelr|taxi-wheelr.png|577,288|122,113
+ wheelf|taxi-wheelf.png|137,292|118,114
+ body|taxi-body.png|44,55|783,304
+ shadow|taxi-shadow.png|74,357|726,56
+}

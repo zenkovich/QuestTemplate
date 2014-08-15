@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Libs\NGUI\Scripts\Editor\NGUIMenu.cs">
+    <Files>
+      <File FileName="Assets\Scripts\AddQuestItemAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuestAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\QuestItemSlot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Utils.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuestInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuestTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AddQuestItemAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DebugQuestAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Editor\QuestActionEditor.cs" Line="113" Column="20" />
+      <File FileName="Assets\Scripts\CheckItemCondition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuestVarCondition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UseItemQuestAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\Libs\NGUI\Scripts\Editor\UIWidgetInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Libs\NGUI\Scripts\Editor\UIPlayAnimationEditor.cs" Line="64" Column="58" />
+      <File FileName="Assets\Libs\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Libs\NGUI\Scripts\Editor\NGUIContextMenu.cs" Line="143" Column="2" />
+      <File FileName="Assets\Libs\NGUI\Scripts\Editor\NGUIMenu.cs" Line="207" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

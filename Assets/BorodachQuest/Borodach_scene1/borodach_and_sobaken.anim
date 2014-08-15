@@ -1,0 +1,358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: borodach_and_sobaken
+  serializedVersion: 4
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1854.29785, y: -666.798096, z: 0}
+        inSlope: {x: 12.5424032, y: -23.2952881, z: 0}
+        outSlope: {x: 12.5424032, y: -23.2952881, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: 1492.23975, y: -690.093384, z: 0}
+        inSlope: {x: 8.74412537, y: -23.2952881, z: 0}
+        outSlope: {x: 8.74412537, y: -23.2952881, z: 0}
+        tangentMode: 3
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Borodach
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1349, y: -673.5, z: 0}
+        inSlope: {x: 0, y: .489825815, z: 0}
+        outSlope: {x: 0, y: .489825815, z: 0}
+        tangentMode: 14391
+      - time: .816666663
+        value: {x: 1349, y: -673.099976, z: 0}
+        inSlope: {x: 0, y: 2.54282522, z: 0}
+        outSlope: {x: 0, y: 2.54282522, z: 0}
+        tangentMode: 0
+      - time: 1.31666672
+        value: {x: 1282.36157, y: -670.802063, z: 0}
+        inSlope: {x: 0, y: 4.59582472, z: 0}
+        outSlope: {x: 0, y: 4.59582472, z: 0}
+        tangentMode: 107679592
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Sabaka
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 2126.69238, y: -756.862732, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Vorona
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 1.09813726, y: -.241071075, z: 0}
+        outSlope: {x: 1.09813726, y: -.241071075, z: 0}
+        tangentMode: 0
+      - time: .466666669
+        value: {x: 1.51246405, y: .887500167, z: 1}
+        inSlope: {x: .0412467718, y: -.042453967, z: 0}
+        outSlope: {x: .0412467718, y: -.042453967, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: .970787406, y: .970787168, z: 1}
+        inSlope: {x: -1.01564372, y: .156163141, z: 0}
+        outSlope: {x: -1.01564372, y: .156163141, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: Borodach
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 1.31666672
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1854.29785
+        inSlope: 12.5424032
+        outSlope: 12.5424032
+        tangentMode: 0
+      - time: 1
+        value: 1492.23975
+        inSlope: 8.74412537
+        outSlope: 8.74412537
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -666.798096
+        inSlope: -23.2952881
+        outSlope: -23.2952881
+        tangentMode: 10
+      - time: 1
+        value: -690.093384
+        inSlope: -23.2952881
+        outSlope: -23.2952881
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 1.09813726
+        outSlope: 1.09813726
+        tangentMode: 10
+      - time: .466666669
+        value: 1.51246405
+        inSlope: .0412467718
+        outSlope: .0412467718
+        tangentMode: 10
+      - time: 1
+        value: .970787406
+        inSlope: -1.01564372
+        outSlope: -1.01564372
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.x
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: -.241071075
+        outSlope: -.241071075
+        tangentMode: 10
+      - time: .466666669
+        value: .887500167
+        inSlope: -.042453967
+        outSlope: -.042453967
+        tangentMode: 10
+      - time: 1
+        value: .970787168
+        inSlope: .156163141
+        outSlope: .156163141
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.y
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .466666669
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.z
+    path: Borodach
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1349
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: .816666663
+        value: 1349
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: 1.31666672
+        value: 1282.36157
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: Sabaka
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -673.5
+        inSlope: .489825815
+        outSlope: .489825815
+        tangentMode: 10
+      - time: .816666663
+        value: -673.099976
+        inSlope: 2.54282522
+        outSlope: 2.54282522
+        tangentMode: 10
+      - time: 1.31666672
+        value: -670.802063
+        inSlope: 4.59582472
+        outSlope: 4.59582472
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: Sabaka
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .816666663
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 1.31666672
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: Sabaka
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 2126.69238
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: Vorona
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -756.862732
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: Vorona
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: Vorona
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_Events: []
