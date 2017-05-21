@@ -9,10 +9,11 @@ using UnityEngine.UI;
 
 public static class StaticBuilder
 {
-    static string staticResourcesPath = "kiss-static";
+    static string staticResourcesPath = "../kiss-static";
     static string dataPath = "Assets/Data";
     static string assetBundlesPath = "Assets/Bundles";
     static string framesPath = "/inventory/frames/mobile";
+    static string framesBundlesPath = "/inventory/frames/unity";
     static string framePrefabName = "FrameObject.prefab";
 
     static int frameSpriteSheetColumns = 50;
@@ -36,10 +37,17 @@ public static class StaticBuilder
     };
     static string referenceScreenResolution = "hdpi";
 
+    [MenuItem("Build/Clear progress")]
+    public static void ClearProgressmenu()
+    {
+        EditorUtility.ClearProgressBar();
+    }
+
     [MenuItem("Build/Run android")]
     public static void RebuildNonForcible()
     {
-        Rebuild(false, true, BuildTarget.Android);
+        //Rebuild(false, true, BuildTarget.Android);
+        RebuildFramesFast();
     }
 
     [MenuItem("Build/Run android forcible")]
@@ -91,6 +99,9 @@ public static class StaticBuilder
                 bool cancelled = EditorUtility.DisplayCancelableProgressBar("Clear bundles", frameDirectory, progress);
 
                 AssetImporter imp = AssetImporter.GetAtPath(file);
+                if (imp == null)
+                    continue;
+
                 imp.assetBundleName = "";
 
                 if (cancelled)
@@ -159,6 +170,10 @@ public static class StaticBuilder
                 foreach (var file in files)
                 {
                     AssetImporter imp = AssetImporter.GetAtPath(file);
+
+                    if (imp == null)
+                        continue;
+
                     imp.assetBundleName = "frames/" + frameId + "/" + level + "/" + gender + "/" + language + "/" + resolution;
                 }
 
@@ -213,6 +228,94 @@ public static class StaticBuilder
         ListFramesDirectories(directory, listFunc);
 
         AssetDatabase.StopAssetEditing();
+    }
+
+    public static void RebuildFramesFast()
+    {
+        FramesDirectoriesListingFunc listFunc = (frameDirectory, progress, frameId, level, gender, language, resolution) =>
+        {
+            bool cancelled = EditorUtility.DisplayCancelableProgressBar("Rebuilding frames", frameDirectory, progress);
+            Debug.Log("------ Frame:" + frameDirectory);
+
+            AssetDatabase.StartAssetEditing();
+
+            // Copy files
+            if (!Directory.Exists(dataPath))
+                Directory.CreateDirectory(dataPath);
+
+            var files = Directory.GetFiles(frameDirectory);
+            foreach (var file in files)
+                File.Copy(file, dataPath + "/" + Path.GetFileName(file));
+
+            AssetDatabase.StopAssetEditing();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            AssetDatabase.StartAssetEditing();
+
+            Debug.Log("Files copied");
+
+            // Build prefab
+            GenerateFramePrefab(dataPath, frameId, level, gender, language, resolution);
+
+            AssetDatabase.StopAssetEditing();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            AssetDatabase.StartAssetEditing();
+
+            Debug.Log("Prefab generated");
+
+            // Set bundle
+            string bundleName = "frame_" + frameId + "_" + level + "_" + gender + "_" + language + "_" + resolution;
+            files = Directory.GetFiles(dataPath);
+            foreach (var file in files)
+            {
+                AssetImporter imp = AssetImporter.GetAtPath(file);
+
+                if (imp == null)
+                    continue;
+
+                imp.assetBundleName = bundleName;
+            }
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.StopAssetEditing();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+
+            Debug.Log("Setted bundle");
+
+            string bundlesPath = assetBundlesPath + "/Android/";
+            if (!Directory.Exists(bundlesPath))
+                Directory.CreateDirectory(bundlesPath);
+
+            var options = BuildAssetBundleOptions.None; // | BuildAssetBundleOptions.ForceRebuildAssetBundle;
+            var manifest = BuildPipeline.BuildAssetBundles(assetBundlesPath + "/Android/", options, BuildTarget.Android);
+         
+            Debug.Log("Created bundle");
+
+            foreach (var file in files)
+                File.Delete(file);
+
+            Debug.Log("Removed files");
+            
+            File.Copy(bundlesPath + bundleName, staticResourcesPath + framesBundlesPath + "/" + bundleName);
+            Directory.Delete(bundlesPath, true);
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+
+            Debug.Log("Bundle copied");
+
+            if (cancelled)
+                throw new Exception("Stopped by user");
+        };
+
+        try
+        {
+            ListFramesDirectories(staticResourcesPath + framesPath, listFunc);
+        }
+        catch (Exception ex)
+        {
+            //AssetDatabase.StopAssetEditing();
+            EditorUtility.ClearProgressBar();
+            Debug.LogError("Frames rebuild failed: " + ex.Message);
+        }
     }
 
     public delegate void FramesDirectoriesListingFunc(string directory, float progress, string frameId, string level, string gender, string language, string resolution);
@@ -393,6 +496,7 @@ public static class StaticBuilder
         GameObject.DestroyImmediate(frameObject);
 
         // assign bundle name and sprite packing tag to assets
+        return;
         files = Directory.GetFiles(directory).ToList().FindAll(x => !x.EndsWith(".meta"));
         foreach (var file in files)
         {
@@ -400,7 +504,7 @@ public static class StaticBuilder
 
             if (imp != null)
             {
-                imp.assetBundleName = "frames/" + frameId + "/" + level + "/" + gender + "/" + language + "/" + resolution;
+                imp.assetBundleName = "";// "frames/" + frameId + "/" + level + "/" + gender + "/" + language + "/" + resolution;
 
                 TextureImporter texImp = imp as TextureImporter;
                 if (texImp != null)
@@ -490,6 +594,9 @@ public static class StaticBuilder
         controller.AddParameter("special", AnimatorControllerParameterType.Trigger);
 
         idleToSpecial.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 1, "special");
+
+        //AssetDatabase.CreateAsset(controller, directory + "/Controller.controller");
+        AssetDatabase.SaveAssets();
     }
 
     private static AnimationClip CreateSpriteSheetAnimation(List<string> frameNames, string path)
